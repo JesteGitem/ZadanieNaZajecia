@@ -3,6 +3,10 @@ didhudqw qwjdhqwdkwq
 
 maciek normalnynynynyny
 ajeeee
+<<<<<<< HEAD
 maciek
 ,ocjals
 cos jeszcze
+=======
+maciek
+>>>>>>> parent of becd7ce... Update dsdas.txt
