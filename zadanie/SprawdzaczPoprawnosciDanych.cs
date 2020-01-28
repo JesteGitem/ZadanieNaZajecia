@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace zadanie
 {
-    public class TylkoPrawilneDzialania
+    public class SprawdzaczPoprawnosciDanych
     {
         string wyrazenie;
         public void SprawdzPoprawnosc(string wyrazenie)
@@ -13,6 +13,7 @@ namespace zadanie
             PoczatekiKoniecToCyfra(wyrazenie);
             TylkoCyfryiZnaki(wyrazenie);
             DwaZnakiObokSiebie(wyrazenie);
+            PrzynajmniejJednoDzialanie(wyrazenie);
         }
         public void PoczatekiKoniecToCyfra(string wyrazenie)
         {

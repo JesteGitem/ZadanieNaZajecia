@@ -8,11 +8,11 @@ namespace TestyKalkulatora
 {
     class TestySzatkownicy
     {
-        zadanie.Szatkownica szatkownica;
+        zadanie.DzielnikWyrazow szatkownica;
         [SetUp]
         public void Setup()
         {
-            szatkownica = new zadanie.Szatkownica();
+            szatkownica = new zadanie.DzielnikWyrazow();
         }
 
         [Test]

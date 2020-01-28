@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace zadanie
 {
-    public class Szatkownica
+    public class DzielnikWyrazow
     {
         public List<string> PodzielWyrazenie(string wyrazenie)
         {

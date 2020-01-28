@@ -8,7 +8,7 @@ namespace zadanie
         {
             try
             {
-                string wyrazenie = "-55+51-10/2*2";
+                string wyrazenie = "55+51-10/2*2";
                 Kalkulator kalkulator = new Kalkulator();
                 double wynik = kalkulator.Oblicz(wyrazenie);
             }

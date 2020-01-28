@@ -8,11 +8,13 @@ namespace zadanie
         public double Oblicz(string wyrazenie)
         {
             List<string> TabelaWyrazen = new List<string>();
-            TylkoPrawilneDzialania sprawdz = new TylkoPrawilneDzialania();
-            sprawdz.SprawdzPoprawnosc(wyrazenie);
-            Szatkownica podziel = new Szatkownica();
-             TabelaWyrazen = podziel.PodzielWyrazenie(wyrazenie);
-            return 1;
+            SprawdzaczPoprawnosciDanych tylkoPrawilneDzialania = new SprawdzaczPoprawnosciDanych();
+            tylkoPrawilneDzialania.SprawdzPoprawnosc(wyrazenie);
+            DzielnikWyrazow szatkownica = new DzielnikWyrazow();
+            TabelaWyrazen = szatkownica.PodzielWyrazenie(wyrazenie);
+            WykonywaczDzialan obliczarka = new WykonywaczDzialan();
+            double wynik = obliczarka.ZwrocWynik(TabelaWyrazen);
+            return wynik;
         }
     }
 }
