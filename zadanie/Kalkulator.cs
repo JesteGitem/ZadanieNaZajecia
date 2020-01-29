@@ -7,13 +7,16 @@ namespace zadanie
     {
         public double Oblicz(string wyrazenie)
         {
+            SprawdzanieDanych sprawdzaniedanych = new SprawdzanieDanych();
+            DzielenieWyrazow dzielenieWyrazow = new DzielenieWyrazow();
+            WykonanieDzialan wykonianieDzialan = new WykonanieDzialan();
             List<string> TabelaWyrazen = new List<string>();
-            SprawdzaczPoprawnosciDanych tylkoPrawilneDzialania = new SprawdzaczPoprawnosciDanych();
-            tylkoPrawilneDzialania.SprawdzPoprawnosc(wyrazenie);
-            DzielnikWyrazow szatkownica = new DzielnikWyrazow();
-            TabelaWyrazen = szatkownica.PodzielWyrazenie(wyrazenie);
-            WykonywaczDzialan obliczarka = new WykonywaczDzialan();
-            double wynik = obliczarka.ZwrocWynik(TabelaWyrazen);
+            sprawdzaniedanych.WprowadzDane(wyrazenie);
+            sprawdzaniedanych.SprawdzPoprawnosc();
+            dzielenieWyrazow.WprowadzWyrazDoPodzielenia(wyrazenie);
+            TabelaWyrazen = dzielenieWyrazow.ZwrocPodzielonyWyraz();
+            wykonianieDzialan.PodajPodzielonyWyraz(TabelaWyrazen);
+            double wynik = wykonianieDzialan.ZwrocWynik();
             return wynik;
         }
     }
