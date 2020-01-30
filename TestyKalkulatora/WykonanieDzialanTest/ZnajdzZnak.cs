@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,15 +17,15 @@ namespace TestyKalkulatora.Obliczarka
             asd = new List<string>();
            
         }
-        [Test]
-        public void PoprawnieZczytujeIndeksZnaku()
-        {
-            asd.Add("15");
-            asd.Add("+");
-            asd.Add("12");
-            test.wyrazenie(asd);
-            PrivateObject
-            test.ZnajdzZnak();
-        }
+        //[Test]
+        //public void PoprawnieZczytujeIndeksZnaku()
+        //{
+        //    asd.Add("15");
+        //    asd.Add("+");
+        //    asd.Add("12");
+        //    test.wyrazenie(asd);
+        //    PrivateObject
+        //    test.ZnajdzZnak();
+        //}
     }
 }

@@ -13,29 +13,29 @@ namespace TestyKalkulatora.TylkoPrawilneDzialania
         {
             test = new zadanie.SprawdzanieDanych();
         }
-        [Test]
-        public void DwaZnakiOboksiebie()
-        {
-            Assert.Catch(() =>
-            {
-                test.DwaZnakiObokSiebie("3213-312312-+312");
-            });
-            Assert.Catch(() =>
-            {
-                test.DwaZnakiObokSiebie("3213--312312-312");
-            });
-            Assert.Catch(() =>
-            {
-                test.DwaZnakiObokSiebie("3213***-312312-+312");
-            });
-            Assert.Catch(() =>
-            {
-                test.DwaZnakiObokSiebie("3213-312312-+312");
-            });
-            Assert.DoesNotThrow(() =>
-            {
-                test.DwaZnakiObokSiebie("+3213-312312+312");
-            });
-        }
+        //[Test]
+        //public void DwaZnakiOboksiebie()
+        //{
+        //    Assert.Catch(() =>
+        //    {
+        //        test.DwaZnakiObokSiebie("3213-312312-+312");
+        //    });
+        //    Assert.Catch(() =>
+        //    {
+        //        test.DwaZnakiObokSiebie("3213--312312-312");
+        //    });
+        //    Assert.Catch(() =>
+        //    {
+        //        test.DwaZnakiObokSiebie("3213***-312312-+312");
+        //    });
+        //    Assert.Catch(() =>
+        //    {
+        //        test.DwaZnakiObokSiebie("3213-312312-+312");
+        //    });
+        //    Assert.DoesNotThrow(() =>
+        //    {
+        //        test.DwaZnakiObokSiebie("+3213-312312+312");
+        //    });
+        //}
     }
 }

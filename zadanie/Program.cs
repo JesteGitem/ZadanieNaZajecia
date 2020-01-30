@@ -8,9 +8,10 @@ namespace zadanie
         {
             try
             {
-                string wyrazenie = "55+51-10/2*2";
+                string wyrazenie = "34+34*54/11*3+4+3";
                 Kalkulator kalkulator = new Kalkulator();
                 double wynik = kalkulator.Oblicz(wyrazenie);
+                Console.WriteLine(wynik);
             }
             catch (Exception e)
             {

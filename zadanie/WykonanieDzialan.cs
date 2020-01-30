@@ -13,14 +13,15 @@ namespace zadanie
         string znakDzialania;
         public double ZwrocWynik()
         {
-            do
+            nrIndeksuZnakuNaLiscie = UstawIntNaIndeksieZnaku();
+            while (nrIndeksuZnakuNaLiscie != 0)
             {
-                nrIndeksuZnakuNaLiscie = UstawIntNaIndeksieZnaku();
                 PobierzDaneDoDzialania();
                 WykonajDzialanie();
                 ZapiszDaneDoListy();
                 UsunzListyNiepotrzebneIndeksy();
-            } while (nrIndeksuZnakuNaLiscie != 0);
+                nrIndeksuZnakuNaLiscie = UstawIntNaIndeksieZnaku();
+            }
             return double.Parse(listaLiczbiZnakow[0]);
         }
         public void PodajPodzielonyWyraz(List<string> tabelaWyrazen)
@@ -29,14 +30,23 @@ namespace zadanie
         }
         private int UstawIntNaIndeksieZnaku()
         {
-            int IndeksDlugosciWyrazenia = 0;
+            int indeksDlugosciWyrazenia = 0;
+            int plusLubMinus = 0;
             foreach (var item in listaLiczbiZnakow)
             {
-                if (item == "/" || item == "*" || item == "+" || item == "-")
+                if (item == "+" || item == "-")
                 {
-                    return IndeksDlugosciWyrazenia;
+                    plusLubMinus = indeksDlugosciWyrazenia;
                 }
-                IndeksDlugosciWyrazenia++;
+                if(item=="*" || item == "/")
+                {
+                    return indeksDlugosciWyrazenia;
+                }
+                indeksDlugosciWyrazenia++;
+            }
+            if (plusLubMinus!=0)
+            {
+                return plusLubMinus;
             }
             return 0;
         }
@@ -74,7 +84,7 @@ namespace zadanie
         private void UsunzListyNiepotrzebneIndeksy()
         {
             listaLiczbiZnakow.RemoveAt(nrIndeksuZnakuNaLiscie);
-            listaLiczbiZnakow.RemoveAt(nrIndeksuZnakuNaLiscie + 1);
+            listaLiczbiZnakow.RemoveAt(nrIndeksuZnakuNaLiscie);
         }
     }
 }
