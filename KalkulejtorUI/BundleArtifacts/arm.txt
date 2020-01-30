@@ -1,0 +1,1 @@
+MainPackage=C:\Gity\ZadanieNaZajecia\KalkulejtorUI\bin\ARM\Release\KalkulejtorUI_1.0.0.0_ARM.msix

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using zadanie;
 
-namespace zadanie
+namespace KalkulejtorUI
 {
-    public class Kalkulator
+    public static class Kalkulator
     {
-        public double Oblicz(string wyrazenie)
+        public static double Oblicz(string wyrazenie)
         {
             SprawdzanieDanych sprawdzaniedanych = new SprawdzanieDanych();
             DzielenieWyrazow dzielenieWyrazow = new DzielenieWyrazow();

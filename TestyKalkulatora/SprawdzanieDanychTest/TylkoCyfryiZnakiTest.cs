@@ -7,11 +7,11 @@ namespace TestyKalkulatora.TylkoPrawilneDzialania
 {
     class TylkoCyfryiZnakiTest
     {
-        zadanie.TylkoPrawilneDzialania test;
+        zadanie.SprawdzanieDanych test;
         [SetUp]
         public void Setup()
         {
-            test = new zadanie.TylkoPrawilneDzialania();
+            test = new zadanie.SprawdzanieDanych();
         }
         [Test]
         public void LiteraWSrodku()

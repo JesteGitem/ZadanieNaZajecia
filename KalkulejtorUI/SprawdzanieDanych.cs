@@ -5,39 +5,43 @@ using System.Text.RegularExpressions;
 
 namespace zadanie
 {
-    public class TylkoPrawilneDzialania
+    public class SprawdzanieDanych
     {
         string wyrazenie;
-        public void SprawdzPoprawnosc(string wyrazenie)
+        public void WprowadzDane(string wyrazenie)
+        {
+            this.wyrazenie = wyrazenie;
+        }
+        public void SprawdzPoprawnosc()
         {
             PoczatekiKoniecToCyfra(wyrazenie);
             TylkoCyfryiZnaki(wyrazenie);
             DwaZnakiObokSiebie(wyrazenie);
+            PrzynajmniejJednoDzialanie(wyrazenie);
         }
-        public void PoczatekiKoniecToCyfra(string wyrazenie)
+        private void PoczatekiKoniecToCyfra(string wyrazenie)
         {
             Regex reg = new Regex(@"^[0-9]+.+\d+$");
             if (!reg.IsMatch(wyrazenie))
                 throw new Exception("Koniec/poczatek to nie cyfra");
         }
-        public void TylkoCyfryiZnaki(string wyrazenie)
+        private void TylkoCyfryiZnaki(string wyrazenie)
         {
             Regex reg = new Regex(@"^[0-9*/+-]+$");
             if (!reg.IsMatch(wyrazenie))
                 throw new Exception("bledny znak");
         }
-        public void DwaZnakiObokSiebie(string wyrazenie)
+        private void DwaZnakiObokSiebie(string wyrazenie)
         {
             Regex reg = new Regex(@"[*/+-]{2,}");
             if (reg.IsMatch(wyrazenie))
                 throw new Exception("za duza liczba znakow obok siebie");
         }
-        public void PrzynajmniejJednoDzialanie(string wyrazenie)
+        private void PrzynajmniejJednoDzialanie(string wyrazenie)
         {
             Regex reg = new Regex(@".+[*/+-]+.+");
             if (!reg.IsMatch(wyrazenie))
                 throw new Exception("za malo wyrazen");
         }
-
     }
 }
